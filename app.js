@@ -15,13 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'public','css')));
 
-
 app.get('/',(req,res)=>{
     res.render('index')
 })
-
-
-
 
 app.listen(port,()=>{
     console.log("Server listening on port: "+port);
