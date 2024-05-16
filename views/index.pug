@@ -1,41 +1,32 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous")
-        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
-        link(rel="stylesheet" href="styles.css")
-        title Presupuesto de trabajo
-    body
-        h1 Presupuesto de trabajo 
-        br
+extends layout
+    h1 Presupuesto de trabajo 
+    br
 
-        form#miFormulario( action="#")
-            div(class="col-auto")
-                label(for="nombre") Nombre del producto:
-                input(class="form-control" type="text" id="nombre" name="nombre" required)
-            
-            div(class="col-auto")
-                label(for="precioMinimo") Precio mínimo:
-                input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" step="0.01" required)
-            
-            div(class="col-auto")
-                label(for="unidadMedida") Precio máximo
-                input(class="form-control" type="number" id="unidadMedida" name="unidadMedida" required)
-            
-            div(class="col-auto")
-                label(for="precioMaximo") Unidad de medida:
-                select(class="form-select" aria-label="Default select example")
-                    option(selected) selecciona la medida
-                    option(value="1") M2
-                    option(value="2") ML
-                    option(value="3") Unidad
-                    option(value="4") CAN
-                    option(value="5") GRAL
-            br
-            div(class="col-auto")
-                button(class="btn btn-success" id="btnSubmit" type="submit") Guardar
+    form#miFormulario( action="#")
+        div(class="col-auto")
+            label(for="nombre") Trabajo:
+            input(class="form-control" type="text" id="nombre" name="nombre" required)
+        
+        div(class="col-auto")
+            label(for="precioMinimo") Precio mínimo:
+            input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" step="0.01" required)
+        
+        div(class="col-auto")
+            label(for="unidadMedida") Precio máximo
+            input(class="form-control" type="number" id="unidadMedida" name="unidadMedida" required)
+        
+        div(class="col-auto")
+            label(for="precioMaximo") Unidad de medida:
+            select(class="form-select" aria-label="Default select example")
+                option(selected) selecciona la medida
+                option(value="1") M2
+                option(value="2") ML
+                option(value="3") Unidad
+                option(value="4") CAN
+                option(value="5") GRAL
+        br
+        div(class="col-auto")
+            button(class="btn btn-success" id="btnSubmit" type="submit") Guardar
         
         
     
