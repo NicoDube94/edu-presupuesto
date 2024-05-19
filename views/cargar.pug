@@ -1,1 +1,38 @@
 extends layout
+block content
+    div
+        h1.mb-5 Cargar presupuesto de trabajo 
+        form#miFormulario( action="#")
+            div(class="col-auto")
+                label(for="precioMaximo") Tipo:
+                select(class="form-select" aria-label="Default select example")
+                    option(selected) selecciona tipo
+                    option(value="albañileria") albañileria
+                    option(value="instalaciones") instalaciones
+                    option(value="carpinteria") carpinteria
+                    option(value="pintura") pintura
+            div(class="col-auto")
+                label(for="nombre") Trabajo:
+                input(class="form-control" type="text" id="nombre" name="nombre" required)
+            
+            div(class="col-auto")
+                label(for="precioMinimo") Precio Mínimo:
+                input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" required)
+            
+            div(class="col-auto")
+                label(for="unidadMedida") Precio Máximo
+                input(class="form-control" type="number" id="unidadMedida" name="unidadMedida" required)
+            
+            div(class="col-auto")
+                label(for="precioMaximo") Unidad de Medida:
+                select(class="form-select" aria-label="Default select example")
+                    option(selected) selecciona la medida
+                    option(value="M2") M2
+                    option(value="ML") ML
+                    option(value="UNIDAD") UNIDAD
+                    option(value="CAN") CAN
+                    option(value="GRAL") GRAL
+            br
+            div(class="col-auto")
+                button(class="btn btn-success" id="btnSubmit" type="submit") Guardar
+                a.btn.btn-danger.ms-5(href="/")  Volver
