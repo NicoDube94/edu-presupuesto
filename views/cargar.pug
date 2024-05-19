@@ -2,30 +2,30 @@ extends layout
 block content
     div
         h1.mb-5 Cargar presupuesto de trabajo 
-        form#miFormulario( action="#")
+        form#miFormulario( action="/cargar" method="POST" enctype="application/x-www-form-urlencoded")
             div(class="col-auto")
                 label(for="precioMaximo") Tipo:
-                select(class="form-select" aria-label="Default select example")
+                select#tipos(class="form-select" aria-label="Default select example")
                     option(selected) selecciona tipo
                     option(value="albañileria") albañileria
                     option(value="instalaciones") instalaciones
                     option(value="carpinteria") carpinteria
                     option(value="pintura") pintura
             div(class="col-auto")
-                label(for="nombre") Trabajo:
-                input(class="form-control" type="text" id="nombre" name="nombre" required)
+                label(for="Trabajo") Trabajo:
+                input(class="form-control" type="text" id="trabajo" name="nombre" required)
             
             div(class="col-auto")
                 label(for="precioMinimo") Precio Mínimo:
                 input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" required)
             
             div(class="col-auto")
-                label(for="unidadMedida") Precio Máximo
-                input(class="form-control" type="number" id="unidadMedida" name="unidadMedida" required)
+                label(for="precioMaximo") Precio Máximo
+                input(class="form-control" type="number" id="precioMAximo" name="precioMaximo" required)
             
             div(class="col-auto")
-                label(for="precioMaximo") Unidad de Medida:
-                select(class="form-select" aria-label="Default select example")
+                label(for="Unidad") Unidad de Medida:
+                select#unidades(class="form-select" aria-label="Default select example")
                     option(selected) selecciona la medida
                     option(value="M2") M2
                     option(value="ML") ML
@@ -34,5 +34,5 @@ block content
                     option(value="GRAL") GRAL
             br
             div(class="col-auto")
-                button(class="btn btn-success" id="btnSubmit" type="submit") Guardar
+                input(type="submit", value="Cargar")#enviar.btn.btn-success
                 a.btn.btn-danger.ms-5(href="/")  Volver
