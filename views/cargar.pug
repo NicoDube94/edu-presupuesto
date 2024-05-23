@@ -2,7 +2,7 @@ extends layout
 block content
     div
         h1.mb-5 Cargar presupuesto de trabajo 
-        form#miFormulario( action="/cargar" method="POST" enctype="application/x-www-form-urlencoded")
+        form#miFormulario( action="/cargar" method="POST" enctype="text/plain")
             div(class="col-auto")
                 label(for="precioMaximo") Tipo:
                 select#tipos(class="form-select" aria-label="Default select example")
@@ -21,7 +21,7 @@ block content
             
             div(class="col-auto")
                 label(for="precioMaximo") Precio Máximo
-                input(class="form-control" type="number" id="precioMAximo" name="precioMaximo" required)
+                input(class="form-control" type="number" id="precioMaximo" name="precioMaximo" required)
             
             div(class="col-auto")
                 label(for="Unidad") Unidad de Medida:

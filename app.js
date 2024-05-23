@@ -1,6 +1,7 @@
 import express from 'express'
 import logger from 'morgan'
 import path from 'node:path'
+import cors from 'cors'
 //importación de rutas
 import indexRoute from './routes/index.js'
 import cargarRoute from './routes/cargar.js'
@@ -8,11 +9,12 @@ import cargarRoute from './routes/cargar.js'
 const __dirname = import.meta.dirname;
 
 const app= express();
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT ?? 1234;
 //app setters
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','pug');
-//app middlewares 
+//app middlewares
+app.use(cors()); 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
