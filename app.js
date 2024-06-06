@@ -2,11 +2,12 @@ import express from 'express'
 import logger from 'morgan'
 import path from 'node:path'
 import cors from 'cors'
+import test from './models/db.js'
 //importación de rutas
 import indexRoute from './routes/index.js'
 import cargarRoute from './routes/cargar.js'
 
-const __dirname = import.meta.dirname;
+const __dirname = import.meta.dirname;//generación de la variable global y uso de la misma en ESmodule
 
 const app= express();
 const port = process.env.PORT ?? 1234;
@@ -27,8 +28,9 @@ app.use(express.static(path.join(__dirname,'public','images')))
 
 app.use('/',indexRoute)
 app.use('/cargar',cargarRoute)
-//se lanza el server
 
+//se lanza el server
 app.listen(port,()=>{
     console.log("Server listening on port: "+port);
+    test();
 })

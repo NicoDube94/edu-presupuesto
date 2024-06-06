@@ -1,12 +1,12 @@
 extends layout
 block content
     div
-        h1.mb-5 Cargar presupuesto de trabajo 
-        form#miFormulario( action="/cargar" method="POST" enctype="application/x-www-form-urlencoded")
+        h1.mb-5 Modifica los datos de presupuesto de trabajo 
+        form#miFormulario( action="/update" method="PUT" enctype="application/x-www-form-urlencoded")
             div(class="col-auto")
                 label(for="precioMaximo") Tipo:
                 select#tipos( name="tipos" class="form-select" aria-label="Default select example")
-                    option(selected)
+                    option(selected) selecciona tipo
                     each tipo in data
                         option(value=`${tipo.id_tipo}`)= tipo.nombre
             div(class="col-auto")
@@ -24,7 +24,7 @@ block content
             div(class="col-auto")
                 label(for="Unidad") Unidad de Medida:
                 select#unidades(name="unidades" class="form-select" aria-label="Default select example")
-                    option(selected)
+                    option(selected) selecciona la medida
                     option(value="M2") M2
                     option(value="ML") ML
                     option(value="UNIDAD") UNIDAD
@@ -32,5 +32,5 @@ block content
                     option(value="GRAL") GRAL
             br
             div(class="col-auto")
-                input(type="submit", value="Cargar")#enviar.btn.btn-success
+                input(type="submit", value="Modificar")#enviar.btn.btn-success
                 a.btn.btn-danger.ms-5(href="/")  Volver
