@@ -38,3 +38,7 @@ FECHA: 5/6/24
 arregle el método de envío de datos al servidor el la view de cargar específicamente(me faltaba agregar los atributos name a las etiquetas select)
 dejando asi innecesaria la fetch que había creado en data.js
 modifique el funcionamiento del boton modificar, solo muestra el formulario vacío hay que llenarlo
+
+FECHA: 30/6/24
+voy a revisar y arreglar el tema de las rutas y voy a modificar el archivo JS públicos e utilizar fetch api para el manejo de las rutas (POST,PUT,DELETE)
+para un manejo mas optimo y legible

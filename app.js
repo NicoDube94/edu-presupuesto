@@ -4,9 +4,9 @@ import path from 'node:path'
 import cors from 'cors'
 import test from './models/db.js'
 //importación de rutas
-import indexRoute from './routes/index.js'
-import cargarRoute from './routes/cargar.js'
-
+import indexRoute from './routes/index.route.js'
+import cargarRoute from './routes/cargar.route.js'
+import updateRoute from './routes/update.route.js'
 const __dirname = import.meta.dirname;//generación de la variable global y uso de la misma en ESmodule
 
 const app= express();
@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname,'public','images')))
 
 app.use('/',indexRoute)
 app.use('/cargar',cargarRoute)
+app.use('/update/:id',updateRoute)
 
 //se lanza el server
 app.listen(port,()=>{
