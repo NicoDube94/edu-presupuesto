@@ -1,6 +1,5 @@
 import {Sequelize,Model, DataTypes} from 'sequelize'
-import { Trabajo } from './trabajo.js';
-const sequelize=new Sequelize('presupuesto_edu','root','',{host:"localhost",dialect:'mysql',port:'3306'});
+const sequelize=new Sequelize(process.env.DB_NAME,process.env.DB_USER,process.env.DB_PASSWORD,{host:process.env.DB_HOTS,dialect:'mysql',port:process.env.DB_PORT});
 
 export class Tipo extends Model{
   static associate(model){
@@ -11,7 +10,7 @@ export class Tipo extends Model{
 Tipo.init({
   id_tipo:{
     type: DataTypes.INTEGER,
-    autoIncrement:true,
+    autoIncrement:false,
     primaryKey:true
   },
   nombre:{

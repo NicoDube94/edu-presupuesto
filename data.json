@@ -1,9 +1,0 @@
-{
-  "1":{
-  "tipo":"albañileria",
-  "trabajo":"nose",
-  "precio_minimo":"500",
-  "precio_maximo":"1000",
-  "unidad":"M2"
-  }
-}

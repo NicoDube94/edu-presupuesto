@@ -1,5 +1,6 @@
+import 'dotenv/config'
 import { Sequelize } from "sequelize";
-const sequelize=new Sequelize('presupuesto_edu','root','',{host:"localhost",dialect:'mysql',port:'3306'});
+const sequelize=new Sequelize(process.env.DB_NAME,process.env.DB_USER,process.env.DB_PASSWORD,{host:process.env.DB_HOTS,dialect:'mysql',port:process.env.DB_PORT});
 
 //relaciones de modelos 
 import { Tipo } from "./tipo.js";

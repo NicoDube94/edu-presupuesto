@@ -14,8 +14,6 @@ export class CargarControl {
       precio_max:req.body.precioMaximo,
       id_tipo:req.body.tipos
     }
-    console.log(data);
-    console.log("La data se muestra bien ahora");
     if(data){
       console.log("Comienza la secuencia de carga de datos a la tabla de trabajos");
       const crear=await Trabajo.create(data,{include:Tipo})
