@@ -1,11 +1,11 @@
 extends layout.pug
 block content 
-    div#titulo.center
+    div#tituloIndex.center
         h1 Lista de trabajos
     div.boton 
         a.btn.btn-success(href="/cargar") Agregar
     div.container.mt-3
-        <table id="myTable" class="table table-striped" style="width:100%">
+        <table id="myTable" class="table table-striped display" style="width:100%">
         <thead>
             <tr>
                 <th>Tipo</th>
@@ -17,9 +17,8 @@ block content
             </tr>
         </thead>
         <tbody>
-            <tr>
             each d in data
-                tr(id=`${d.id_trabajo}`)
+                tr
                     td= d.tipo.nombre
                     td= d.nombre
                     td= d.unidad
@@ -27,7 +26,7 @@ block content
                     td= d.precio_max
                     td
                         a.btn.btn-info(href=`/update/${d.id_trabajo}`) Modificar
-                        a.btn.btn-danger(href=`/delete/${d.id_trabajo}`) Eliminar
+                        button.btn.btn-danger(onclick=`deleteItem(${d.id_trabajo})`) Eliminar
         </tbody>
         <tfoot>
             <tr>
@@ -40,3 +39,4 @@ block content
             </tr>
         </tfoot>
         </table>
+        

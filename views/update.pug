@@ -1,35 +1,64 @@
 extends layout
 block content
     div
-        h1.mb-5 Modifica los datos de presupuesto de trabajo 
-        form#miFormulario( action="/update" method="PUT" enctype="application/x-www-form-urlencoded")
+        h1.mb-5 Modificar presupuesto de trabajo 
+        form#miFormulario(action=`/update/${data.id_trabajo}` method="POST" enctype="application/x-www-form-urlencoded")
+            input(type="hidden", name="id" value=`${data.id_trabajo}`)
             div(class="col-auto")
                 label(for="precioMaximo") Tipo:
-                select#tipos( name="tipos" class="form-select" aria-label="Default select example")
-                    option(selected) selecciona tipo
-                    each tipo in data
-                        option(value=`${tipo.id_tipo}`)= tipo.nombre
+                select(class="form-select" id="tipos" name="tipos" aria-label="Default select example")
+                    if data.id_tipo === 1
+                        option(value="1" selected) albañileria
+                    else
+                        option(value="1") albañileria
+                    if data.id_tipo === 2
+                        option(value="2" selected) instalaciones
+                    else
+                        option(value="2") instalaciones
+                    if data.id_tipo === 3
+                        option(value="3" selected) carpinteria
+                    else
+                        option(value="3") carpinteria
+                    if data.id_tipo === 4
+                        option(value="4" selected) pintura
+                    else
+                        option(value="4") pintura
+
             div(class="col-auto")
                 label(for="Trabajo") Trabajo:
-                input(class="form-control" type="text" id="trabajo" name="nombre" required value=`${data.nombre}`)
+                input(class="form-control" type="text" id="trabajo" name="nombre" required value= `${data.nombre}`)
             
             div(class="col-auto")
                 label(for="precioMinimo") Precio Mínimo:
-                input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" required value=`${data.precio_min}`)
+                input(class="form-control" type="number" id="precioMinimo" name="precioMinimo" required value= `${data.precio_min}`)
             
             div(class="col-auto")
                 label(for="precioMaximo") Precio Máximo
-                input(class="form-control" type="number" id="precioMaximo" name="precioMaximo" required value=`${data.precio_max}`)
+                input(class="form-control" type="number" id="precioMaximo" name="precioMaximo" required value= `${data.precio_max}`)
             
             div(class="col-auto")
                 label(for="Unidad") Unidad de Medida:
                 select#unidades(name="unidades" class="form-select" aria-label="Default select example")
-                    option(selected) selecciona la medida
-                    option(value="M2") M2
-                    option(value="ML") ML
-                    option(value="UNIDAD") UNIDAD
-                    option(value="CAN") CAN
-                    option(value="GRAL") GRAL
+                    if data.unidad === 'M2'
+                        option(value="1" selected) M2
+                    else
+                        option(value="1") M2
+                    if data.unidad === 'ML'
+                        option(value="2" selected) ML
+                    else
+                        option(value="2") ML
+                    if data.unidad === 'UNIDAD'
+                        option(value="3" selected) UNIDAD
+                    else
+                        option(value="3") UNIDAD
+                    if data.unidad === 'CAN'
+                        option(value="4" selected) CAN
+                    else
+                        option(value="4") CAN
+                    if data.unidad === 'GRAL'
+                        option(value="4" selected) GRAL
+                    else
+                        option(value="4") GRAL
             br
             div(class="col-auto")
                 input(type="submit", value="Modificar")#enviar.btn.btn-success

@@ -6,7 +6,6 @@ block content
             div(class="col-auto")
                 label(for="precioMaximo") Tipo:
                 select#tipos( name="tipos" class="form-select" aria-label="Default select example")
-                    option(selected)
                     each tipo in data
                         option(value=`${tipo.id_tipo}`)= tipo.nombre
             div(class="col-auto")

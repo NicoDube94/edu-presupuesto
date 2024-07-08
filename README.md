@@ -24,7 +24,7 @@ ETAPA 3:
 mostrar los datos en el dataTable ya con los botones de modificar y eliminar(no funcionales).__ECHO__
 
 ETAPA 4:
-agregar funcionalidad a los botones de modificar y eliminar
+agregar funcionalidad a los botones de modificar y eliminar. __ECHO__
 
 FECHA: 29/5/24
 abarque el controller de indexController en una clase y la exporte a las rutas par que quede mas claro en código
@@ -40,5 +40,22 @@ dejando asi innecesaria la fetch que había creado en data.js
 modifique el funcionamiento del boton modificar, solo muestra el formulario vacío hay que llenarlo
 
 FECHA: 30/6/24
-voy a revisar y arreglar el tema de las rutas y voy a modificar el archivo JS públicos e utilizar fetch api para el manejo de las rutas (POST,PUT,DELETE)
+voy a revisar y arreglar la ruta /update/:id y voy a modificar el archivo botones.js(modificar nombre en un futuro) y utilizar fetch api para el manejo de las rutas (POST,PUT,DELETE)
 para un manejo mas optimo y legible
+
+FECHA: 1/7/24
+arregle la tura para modificar ahora no se genera un conflicto con las rutas estáticas entra bien, falta revisar los formularios tanto el de editar como el de agregar si carga bien los datos
+y al editar falta el código y la ruta POST correspondiente
+
+FECHA: 2/7/24
+voy arreglar la view de modificar => ya esta echo.
+Se genero otra vez el mismo problema, los conflictos con las rutas estáticas => ya esta echo.
+el problema lo solucione agregando una ruta estática con el agregado de '/update' en el método static
+
+FECHA: 6/7/24
+terminar con la ruta del delete para eliminar un elemento, ver si se puede eliminar de forma dinámica utilizando fetch: me falto mañana lo sigo
+
+FECHA: 7/7/24
+Acabo de terminar el DELETE quedo funcional, el crud quedo terminado, etapa 4 finalizada. Puedo proseguir con la etapa 5!
+el boton eliminar que funcional agregue un fetch el scrip de table.js donde ago el envío al servidor colocando el method: DELETE luego en un .then(coloco un alert y un location.reload()-> esta
+función genera que se recargue la pagina para que se vean los cambios al momento de eliminar un elemento)

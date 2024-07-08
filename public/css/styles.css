@@ -1,10 +1,23 @@
 body{
     color: white;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,71,121,1) 37%, #0359aa 100%) !important;
+    background-color: rgba(7, 50, 114, 0.877);
 }
 #miFormulario{
     width: 50%;
 }
 a{
     text-decoration: none;
+}
+#titulo{
+    font-size: 5rem;
+    margin-top: 20%;
+}
+#tituloIndex{
+    font-size: 5rem;
+}
+#error{
+    display: block;
+    font-size: 8rem;
+    color: darkred;
+    text-align: center;
 }

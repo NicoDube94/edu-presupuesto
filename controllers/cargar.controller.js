@@ -4,7 +4,7 @@ export class CargarControl {
 
   render=async (req,res)=>{
     const data=await Tipo.findAll();
-    res.render('cargar',{'data':data})
+    res.render('cargar',{data:data})
   }
   create=async (req,res)=>{
     const data={

@@ -1,14 +1,14 @@
 doctype html
 html(lang="es" data-bs-theme="dark")
     head
-        link(rel="icon" href="favicon.ico")
+        link(rel="icon" href="images/favicon.ico")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Presupuesto de trabajo
 
         //- agregamos los cdn de data tables 2
 
-        script(src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous")
+        script(defer src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous")
         link(rel="stylesheet", href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css")
         script(defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js")
         script(defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js")
@@ -20,11 +20,9 @@ html(lang="es" data-bs-theme="dark")
         
         //- agregamos archivos statics
 
-        link(rel="stylesheet" href="styles.css")
-        script(defer type="text/javascript" src="tables.js")
-        script(defer type="text/javascript" src="data.js")
-        script(defer type="text/javascript" src="botones.js") 
-
+        link(rel="stylesheet" href="css/styles.css")
+        script(defer type="module" src="js/tables.js")
+        //- script(defer type="text/javascript" src="data.js")
     body
         div.container
             block content

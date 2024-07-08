@@ -1,12 +1,12 @@
 import express from 'express'
-import {indexControl} from '../controllers/index.controller.js'
+import {IndexControl} from '../controllers/index.controller.js'
 
 const router=express.Router();
-const index_cl=new indexControl();//esta linea es necesaria para que funcione la clase del controlador
+const index_cl=new IndexControl();//esta linea es necesaria para que funcione la clase del controlador
 
 
 //rutas de la pagina principal
 
 router.get('/',index_cl.mostrarTodo);
-router.delete('/:id')
-export default router;
+router.delete('/delete/:id',index_cl.delete)
+export default router; 
